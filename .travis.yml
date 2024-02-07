@@ -26,22 +26,21 @@ install:
   - ls -la
   - echo "TODO COMPILE 32bit"
   - yes | cp -f buildozer-32bit.spec buildozer.spec
-  - yes | travis_wait 20 buildozer android debug
+  - yes | buildozer android debug
   - ls -la
   - ls bin/ -l
   - echo "TODO"
   - gem install dpl --pre
-  - dpl releases --token $GITHUB_TOKEN --file "bin/cityWalk-0.1-armeabi-v7a-debug.apk" --tag_name "v.2.3"
+  - dpl releases --token $GITHUB_TOKEN --file "bin/cityWalk-0.2-armeabi-v7a-debug.apk" --tag_name "v.0.2"
   - echo "TODO COMPILE 64bit"
   - ls -la
   - rm -r -f .buildozer
   - ls -la
   - yes | cp -f buildozer-64bit.spec buildozer.spec
-  - yes | travis_wait 20 buildozer android debug
+  - yes | buildozer android debug
   - ls -la
   - ls bin/ -l
   - echo "TODO"
   - gem install dpl --pre
-  - dpl releases --token $GITHUB_TOKEN --file "bin/cityWalk-0.1-arm64-v8a-debug.apk" --tag_name "v.2.3"
-script:
+  - dpl releases --token $GITHUB_TOKEN --file "bin/cityWalk-0.2-arm64-v8a-debug.apk" --tag_name "v.0.2"
   - echo "OK"
