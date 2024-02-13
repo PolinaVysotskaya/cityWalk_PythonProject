@@ -1,8 +1,14 @@
+from kivy.core.text import LabelBase
+from kivy.properties import StringProperty
+from kivymd.app import MDApp
+from kivymd.uix.button import MDRoundFlatButton
+from kivymd.uix.screen import MDScreen
 from kivy.app import App
 from kivymd.uix.label import MDLabel
 from kivy.lang import Builder
 from kivymd.uix.card import MDCard
 from kivy.uix.screenmanager import Screen
+from kivymd.uix.screen import MDScreen
 
 
 class HomeScreen(Screen):
@@ -13,11 +19,12 @@ class CardsScreen(Screen):
     pass
 
 
-GUI = Builder.load_file("main.kv")
+LabelBase.register(name='my_font', fn_regular='ABeeZee-Regular.ttf')
 
 
-class CityWalkApp(App):
+class CityWalkApp(MDApp):
     def build(self):
+        GUI = Builder.load_file("main.kv")
         return GUI
 
     def change_screen(self, screen_name):

@@ -1,6 +1,23 @@
+#:import utils kivy.utils
+
 <HomeScreen>:
-    Button
-        text:
-            "main screen"
-        on_release:
-            app.change_screen("cards_screen")
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#FFFFFF")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            font_name: "my_font"
+            pos_hint: {"top": .8, "left": 1}
+            size_hint: 1, .1
+            text: "         CityWalk\n plan your vacation"
+            color: 0, 0, 0, 1
+            id: streak_label
+        MDRoundFlatButton:
+            line_color: 0, 0, 0, 1
+            text: "          start          "
+            pos_hint: {"center_x": .5, "center_y": .3}
+            text_color: 0, 0, 0, 1
+            on_release: app.change_screen("cards_screen")
