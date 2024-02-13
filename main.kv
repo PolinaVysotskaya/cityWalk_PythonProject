@@ -1,36 +1,13 @@
-from kivy.core.text import LabelBase
-from kivy.properties import StringProperty
-from kivymd.app import MDApp
-from kivymd.uix.button import MDRoundFlatButton
-from kivymd.uix.screen import MDScreen
-from kivy.app import App
-from kivymd.uix.label import MDLabel
-from kivy.lang import Builder
-from kivymd.uix.card import MDCard
-from kivy.uix.screenmanager import Screen
-from kivymd.uix.screen import MDScreen
+#:include kv/homescreen.kv
+#:include kv/cardsscreen.kv
 
-
-class HomeScreen(Screen):
-    pass
-
-
-class CardsScreen(Screen):
-    pass
-
-
-LabelBase.register(name='my_font', fn_regular='ABeeZee-Regular.ttf')
-
-
-class CityWalkApp(MDApp):
-    def build(self):
-        GUI = Builder.load_file("main.kv")
-        return GUI
-
-    def change_screen(self, screen_name):
-        screen_manager = self.root.ids['screen_manager']
-        # screen_manager.transition
-        screen_manager.current = screen_name
-
-
-CityWalkApp().run()
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        CardsScreen:
+            name: "cards_screen"
+            id: cards_screen
