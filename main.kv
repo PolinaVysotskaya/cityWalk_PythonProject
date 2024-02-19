@@ -1,5 +1,7 @@
 #:include kv/homescreen.kv
 #:include kv/cardsscreen.kv
+#:include kv/historyscreen.kv
+#:include kv/newroutescreen.kv
 
 GridLayout:
     cols: 1
@@ -11,3 +13,9 @@ GridLayout:
         CardsScreen:
             name: "cards_screen"
             id: cards_screen
+        HistoryScreen:
+            name: "history_screen"
+            id: history_screen
+        NewRouteScreen:
+            name: "new_route_screen"
+            id: new_route_screen

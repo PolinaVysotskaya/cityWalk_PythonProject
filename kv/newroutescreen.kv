@@ -1,0 +1,59 @@
+#:import utils kivy.utils
+
+<CheckItem>
+    adaptive_height: True
+    MDCheckbox:
+        group: root.group
+    MDLabel:
+        text: root.text
+        adaptive_height: True
+        padding_x: "6dp"
+        pos_hint: {"center_y": .5} #изменяем текст
+
+<NewRouteScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#fff9e8")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            font_name: "my_font"
+            pos_hint: {"top": .9, "left": 1}
+            size_hint: 1, .1
+            text: "what would you like to visit?"
+            color: 0, 0, 0, 1
+            id: streak_label
+        MDBoxLayout:
+            orientation: "vertical"
+            adaptive_height: True
+            padding: "24dp", 0, 0, 0
+            spacing: "12dp"
+            pos_hint: {"center_x": .5, "center_y": .5}
+            CheckItem:
+                font_name: "my_font"
+                text: "cultural and historical sites"
+                group: "child"
+            CheckItem:
+                font_name: "my_font"
+                text: "entertainment places"
+                group: "child"
+            CheckItem:
+                font_name: "my_font"
+                text: "shopping"
+                group: "child"
+            CheckItem:
+                font_name: "my_font"
+                text: "gastronomic places"
+                group: "child"
+            CheckItem:
+                font_name: "my_font"
+                text: "places for rest and relaxation"
+                group: "child"
+        MDRoundFlatButton:
+            line_color: 0, 0, 0, 1
+            text: "          back          "
+            pos_hint: {"center_x": .5, "center_y": .1}
+            text_color: 0, 0, 0, 1
+            on_release: app.change_screen("home_screen")

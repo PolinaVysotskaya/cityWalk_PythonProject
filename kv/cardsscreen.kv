@@ -15,23 +15,22 @@
             text: "my travels"
             color: 0, 0, 0, 1
             id: streak_label
-        MDCard
-            size_hint: .9, .1
+        MDRoundFlatButton:
+            line_color: 0, 0, 0, 1
+            text: "                               my routes                               "
             pos_hint: {"center_x": .5, "center_y": .7}
-            elevation: 10
-            shadow_color: "grey"
-            md_bg_color: "white"
-            md_bg_color_disabled: "grey"
-            style: "elevated"
-            text: "my routes"
             text_color: 0, 0, 0, 1
-        MDCard
-            size_hint: .9, .1
-            pos_hint: {"center_x": .5, "center_y": .5}
-            elevation: 10
-            shadow_color: "grey"
+            on_release: app.change_screen("history_screen")
+            theme_shadow_color: "Custom"
+            shadow_color: "pink"
             md_bg_color: "white"
-            md_bg_color_disabled: "grey"
-            style: "elevated"
-            text: "create a new route"
+        MDRoundFlatButton:
+            line_color: 0, 0, 0, 1
+            text: "                       create a new route                     + "
+            pos_hint: {"center_x": .5, "center_y": .6}
             text_color: 0, 0, 0, 1
+            on_release: app.change_screen("new_route_screen")
+            theme_shadow_color: "Custom"
+            shadow_color: "pink"
+            md_bg_color: "white"
+

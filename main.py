@@ -9,6 +9,7 @@ from kivy.lang import Builder
 from kivymd.uix.card import MDCard
 from kivy.uix.screenmanager import Screen
 from kivymd.uix.screen import MDScreen
+from kivymd.uix.boxlayout import MDBoxLayout
 
 
 class HomeScreen(Screen):
@@ -19,12 +20,26 @@ class CardsScreen(Screen):
     pass
 
 
+class HistoryScreen(Screen):
+    pass
+
+
+class NewRouteScreen(Screen):
+    pass
+
+
 LabelBase.register(name='my_font', fn_regular='ABeeZee-Regular.ttf')
+
+
+class CheckItem(MDBoxLayout):
+    text = StringProperty()
+    group = StringProperty()
 
 
 class CityWalkApp(MDApp):
     def build(self):
         GUI = Builder.load_file("main.kv")
+        self.theme_cls.primary_palette = "Green"
         return GUI
 
     def change_screen(self, screen_name):

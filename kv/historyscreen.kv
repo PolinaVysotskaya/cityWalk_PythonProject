@@ -1,6 +1,6 @@
 #:import utils kivy.utils
 
-<HomeScreen>:
+<HistoryScreen>:
     FloatLayout:
         canvas:
             Color:
@@ -8,22 +8,16 @@
             Rectangle:
                 size: self.size
                 pos: self.pos
-        GridLayout:
-            rows: 1
-            pos_hint: {"top": .6, "left": 1}
-            size_hint: 1, .3
-            Image:
-                source: "icons/main.png"
         Label:
             font_name: "my_font"
             pos_hint: {"top": .8, "left": 1}
             size_hint: 1, .1
-            text: "         CityWalk\n plan your vacation"
+            text: "map page"
             color: 0, 0, 0, 1
             id: streak_label
         MDRoundFlatButton:
             line_color: 0, 0, 0, 1
-            text: "          start          "
+            text: "          back          "
             pos_hint: {"center_x": .5, "center_y": .3}
             text_color: 0, 0, 0, 1
-            on_release: app.change_screen("cards_screen")
+            on_release: app.change_screen("home_screen")
